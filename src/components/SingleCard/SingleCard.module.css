@@ -1,0 +1,18 @@
+.single__card {
+  width: 95%;
+  margin: 0 auto;
+  background: white;
+}
+
+.img__container {
+  display: flex;
+}
+
+.img__container img {
+  width: 50%;
+  margin: 0 auto;
+}
+
+p {
+  font-size: 0.8em;
+}
