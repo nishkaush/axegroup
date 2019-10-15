@@ -8,7 +8,7 @@ const Header = props => {
       <Col>
         <header className={styles.header}>
           <div className="heading__container">
-            <h2>All Products</h2>
+            <h3>All Products</h3>
             <p>24 Products</p>
           </div>
 
