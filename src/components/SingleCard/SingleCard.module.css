@@ -2,10 +2,12 @@
   width: 95%;
   margin: 0 auto;
   background: white;
+  /* height: 250px; */
 }
 
 .img__container {
   display: flex;
+  height: 130px;
 }
 
 .img__container img {

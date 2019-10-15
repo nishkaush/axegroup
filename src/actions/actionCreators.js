@@ -17,3 +17,7 @@ export const updateAllProductsArr = data => {
 export const errorUpdate = errorMsg => {
   return { type: "UPDATE_ERROR_DETAILS", payload: errorMsg };
 };
+
+export const updateItemsPerPage = val => {
+  return { type: "UPDATE_ITEMS_PER_PAGE", payload: val };
+};

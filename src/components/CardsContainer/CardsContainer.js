@@ -15,8 +15,8 @@ const CardsContainer = props => {
 
   return (
     <Row>
-      <Col xs={6} className="mx-auto">
-        No Products Found
+      <Col xs={10} sm={8} md={4} className="mx-auto">
+        <h3 className="text-center">No Products Found</h3>
       </Col>
     </Row>
   );

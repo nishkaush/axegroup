@@ -6,7 +6,7 @@ import Header from "./components/Header/Header";
 import CardsContainer from "./components/CardsContainer/CardsContainer";
 import PaginationComp from "./components/PaginationComp/PaginationComp";
 import ErrorComp from "./components/ErrorComp/ErrorComp";
-import { fetchProducts } from "./actions/actionCreators";
+import { fetchProducts, updateItemsPerPage } from "./actions/actionCreators";
 
 class App extends React.Component {
   constructor(props) {
@@ -32,8 +32,11 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        <Container fluid className="px-5">
-          <Header />
+        <Container fluid>
+          <Header
+            itemsPerPage={this.props.itemsPerPage}
+            inputChangeFunc={this.props.updateItemsPerPage}
+          />
           {mainContent}
         </Container>
       </div>
@@ -44,13 +47,15 @@ class App extends React.Component {
 const mapStateToProps = state => {
   return {
     productsArr: state.currentProductsToShowArr,
-    errorMsg: state.errorMessage
+    errorMsg: state.errorMessage,
+    itemsPerPage: state.itemsPerPage
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchAllProducts: url => dispatch(fetchProducts(url))
+    fetchAllProducts: url => dispatch(fetchProducts(url)),
+    updateItemsPerPage: val => dispatch(updateItemsPerPage(val))
   };
 };
 export default connect(

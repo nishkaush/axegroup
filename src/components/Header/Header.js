@@ -3,6 +3,7 @@ import { Row, Col } from "react-bootstrap";
 import styles from "./Header.module.css";
 
 const Header = props => {
+  console.log("props[header]", props);
   return (
     <Row>
       <Col>
@@ -17,6 +18,8 @@ const Header = props => {
               className={styles.items__per__page__input}
               type="number"
               placeholder="0"
+              value={props.itemsPerPage}
+              onChange={e => props.inputChangeFunc(e.target.value)}
             />
             <span>items per page</span>
           </div>
