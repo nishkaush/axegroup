@@ -1,14 +1,28 @@
 import React from "react";
-import { Row } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
+import styles from "./Header.module.css";
 
 const Header = props => {
   return (
     <Row>
-      <header>
-        <h2>All Products</h2>
-        <p>24 Products</p>
-        <input type="text" placeholder="items per page" />
-      </header>
+      <Col>
+        <header className={styles.header}>
+          <div className="heading__container">
+            <h2>All Products</h2>
+            <p>24 Products</p>
+          </div>
+
+          <div className="items__per__page__container">
+            <input
+              className={styles.items__per__page__input}
+              type="number"
+              placeholder="0"
+            />
+            <span>items per page</span>
+          </div>
+        </header>
+        <hr />
+      </Col>
     </Row>
   );
 };
