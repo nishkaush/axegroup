@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Spinner } from "react-bootstrap";
 import SingleCard from "./../SingleCard/SingleCard";
 
 const CardsContainer = props => {
@@ -16,7 +16,11 @@ const CardsContainer = props => {
   return (
     <Row>
       <Col xs={10} sm={8} md={4} className="mx-auto">
-        <h3 className="text-center">No Products Found</h3>
+        {props.isLoading ? (
+          <Spinner animation="grow" size="lg" variant="info" />
+        ) : (
+          <h3 className="text-center">No Products Found</h3>
+        )}
       </Col>
     </Row>
   );
